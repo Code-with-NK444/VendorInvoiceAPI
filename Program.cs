@@ -29,7 +29,7 @@ namespace VendorInvoiceApi
 			builder.Services.AddScoped<IApplicationDbContext>(provider =>
 				provider.GetRequiredService<ApplicationDbContext>());
 
-			builder.Services.AddScoped<VendorInvoiceRepository>();
+			builder.Services.AddScoped<VendorInvoiceService>();
 
 			// SignalR + the background service that watches Change Tracking
 			// and pushes updates over the hub.

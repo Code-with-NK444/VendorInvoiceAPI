@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.37328.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorInvoiceApi", "VendorInvoiceApi.csproj", "{162791F3-2280-42F7-B3F3-A235066D4978}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorInvoiceLogic", "..\VendorInvoice.Logic\VendorInvoiceLogic.csproj", "{9403E095-1886-4E2C-8CE0-2EA849475F98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorInvoiceRepo", "..\VendorInvoiceRepo\VendorInvoiceRepo.csproj", "{C1464087-6438-4505-A771-CB1BE903B8C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{162791F3-2280-42F7-B3F3-A235066D4978}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{162791F3-2280-42F7-B3F3-A235066D4978}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{162791F3-2280-42F7-B3F3-A235066D4978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9403E095-1886-4E2C-8CE0-2EA849475F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9403E095-1886-4E2C-8CE0-2EA849475F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9403E095-1886-4E2C-8CE0-2EA849475F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9403E095-1886-4E2C-8CE0-2EA849475F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1464087-6438-4505-A771-CB1BE903B8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1464087-6438-4505-A771-CB1BE903B8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1464087-6438-4505-A771-CB1BE903B8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1464087-6438-4505-A771-CB1BE903B8C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using VendorInvoiceApi.Hubs;
+using VendorInvoiceLogic.Abstraction;
 
 namespace VendorInvoiceApi.Services
 {
@@ -34,7 +35,7 @@ namespace VendorInvoiceApi.Services
 				try
 				{
 					using var scope = _scopeFactory.CreateScope();
-					var repository = scope.ServiceProvider.GetRequiredService<VendorInvoiceRepository>();
+					var repository = scope.ServiceProvider.GetRequiredService<IVendorInvoiceService>();
 
 					var currentVersion = await repository.GetCurrentChangeVersionAsync(stoppingToken);
 
