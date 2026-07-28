@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VendorInvoiceApi.Models;
-using VendorInvoiceApi.Services;
 using VendorInvoiceLogic.Abstraction;
 
 namespace VendorInvoiceApi.Controllers

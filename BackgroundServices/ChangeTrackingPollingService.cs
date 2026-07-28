@@ -2,7 +2,7 @@
 using VendorInvoiceApi.Hubs;
 using VendorInvoiceLogic.Abstraction;
 
-namespace VendorInvoiceApi.Services
+namespace VendorInvoiceApi.BackgroundServices
 {
 	public class ChangeTrackingPollingService : BackgroundService
 	{

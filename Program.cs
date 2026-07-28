@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using VendorInvoiceApi.Data;
 using VendorInvoiceApi.Hubs;
-using VendorInvoiceApi.Services;
+using VendorInvoiceLogic.Abstraction;
+using VendorInvoiceLogic;                  // or wherever VendorInvoiceService actually sits
+using VendorInvoiceApi.BackgroundServices;
+using VendorInvoiceLogic.Services;
 
 namespace VendorInvoiceApi
 {
@@ -29,7 +32,7 @@ namespace VendorInvoiceApi
 			builder.Services.AddScoped<IApplicationDbContext>(provider =>
 				provider.GetRequiredService<ApplicationDbContext>());
 
-			builder.Services.AddScoped<VendorInvoiceService>();
+			builder.Services.AddScoped<IVendorInvoiceService, VendorInvoiceService>();
 
 			// SignalR + the background service that watches Change Tracking
 			// and pushes updates over the hub.
