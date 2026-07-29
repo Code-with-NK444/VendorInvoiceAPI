@@ -4,16 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendorInvoiceRepo.Data
+namespace VendorInvoiceLogic.Abstractions
 {
-	public class VendorInvoiceRecord
+	public interface IInvoicePdfParser
 	{
-		public int Id { get; set; }
-		public int VendorId { get; set; }
+		ParsedInvoice Parse(string pdfText);
+	}
+
+	public class ParsedInvoiceLineItem
+	{
 		public string Material { get; set; } = string.Empty;
 		public decimal Weight { get; set; }
+	}
+
+	public class ParsedInvoice
+	{
+		public int VendorId { get; set; }
 		public DateTime ReceivedDate { get; set; }
 		public DateTime? ExpiryDate { get; set; }
-		public int? InvoiceFileId { get; set; }
+		public List<ParsedInvoiceLineItem> LineItems { get; set; } = new();
 	}
 }

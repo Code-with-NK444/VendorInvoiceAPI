@@ -11,6 +11,7 @@ namespace VendorInvoiceRepo
 	public interface IApplicationDbContext
 	{
 		DbSet<VendorInvoiceRecord> VendorInvoices { get; }
+		DbSet<InvoiceFile> InvoiceFiles { get; }   // new
 		Task<long> GetChangeTrackingVersionAsync(CancellationToken cancellationToken);
 		Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 	}

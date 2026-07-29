@@ -29,6 +29,12 @@ namespace VendorInvoiceApi
 				provider.GetRequiredService<ApplicationDbContext>());
 
 			builder.Services.AddScoped<IVendorInvoiceService, VendorInvoiceService>();
+			builder.Services.AddScoped<IInvoicePdfParser, InvoicePdfParser>();
+			builder.Services.AddScoped<IInvoiceUploadService>(provider =>
+				new InvoiceUploadService(
+					provider.GetRequiredService<IApplicationDbContext>(),
+					provider.GetRequiredService<IInvoicePdfParser>(),
+					Path.Combine(builder.Environment.ContentRootPath, "UploadedInvoices")));
 
 			builder.Services.AddSignalR();
 			builder.Services.AddHostedService<ChangeTrackingPollingService>();

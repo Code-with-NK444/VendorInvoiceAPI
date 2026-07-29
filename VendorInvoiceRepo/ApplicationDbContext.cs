@@ -17,6 +17,7 @@ namespace VendorInvoiceRepo
 		}
 
 		public DbSet<VendorInvoiceRecord> VendorInvoices => Set<VendorInvoiceRecord>();
+		public DbSet<InvoiceFile> InvoiceFiles => Set<InvoiceFile>();
 
 		public async Task<long> GetChangeTrackingVersionAsync(CancellationToken cancellationToken)
 		{
@@ -40,6 +41,17 @@ namespace VendorInvoiceRepo
 				entity.Property(e => e.Weight).HasColumnName("Weight").HasColumnType("decimal(10,2)");
 				entity.Property(e => e.ReceivedDate).HasColumnName("recieved_date").HasColumnType("date");
 				entity.Property(e => e.ExpiryDate).HasColumnName("Expiry_Date").HasColumnType("date");
+				entity.Property(e => e.InvoiceFileId).HasColumnName("InvoiceFileId");   // new
+
+				entity.HasOne<InvoiceFile>()
+					  .WithMany()
+					  .HasForeignKey(e => e.InvoiceFileId);                             // new
+			});
+
+			modelBuilder.Entity<InvoiceFile>(entity =>                                  // new
+			{
+				entity.ToTable("Invoice_Files", "dbo");
+				entity.HasKey(e => e.Id);
 			});
 		}
 	}
